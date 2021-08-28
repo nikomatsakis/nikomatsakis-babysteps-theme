@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "nikomatsakis-babysteps-theme"
-  spec.version       = "0.1.7"
+  spec.version       = "0.1.8"
   spec.authors       = ["Niko Matsakis"]
   spec.email         = ["niko@alum.mit.edu"]
 
