@@ -1,0 +1,292 @@
+---
+---
+@import url("https://fonts.googleapis.com/css?family=Zilla+Slab:400,700");
+@import url("https://fonts.googleapis.com/css?family=DM-Sans:400,700,800");
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@300&display=swap");
+
+$background: #ffffff;
+$black: #000000;
+$red: #ff3500;
+$typography: DM-Sans;
+
+body {
+  background-color: $background;
+  color: $black;
+  font-family: $typography, Helvetica;
+  font-weight: 400;
+  font-size: 16pt;
+  line-height: 1.5;
+}
+
+h1 {
+  font-size: 80px;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 40px;
+  font-weight: 700;
+  font-family: 'DM Mono', monospace;
+}
+
+h3 {
+  font-size: 36px;
+  font-weight: 300;
+}
+
+h4 {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+a {
+  color: #4B7BD6;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Formatting for 2-column */
+
+.flex_wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.sidenav {
+    position: sticky;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    padding: 3%;
+    width: 27vw;
+    border-right: 3px solid #000000;
+}
+
+
+.content_body {
+  position: relative;
+  padding: 3% 10% 3% 3%;
+  justify-content: center;
+  width: 73%;
+}
+
+.content_body img {
+  max-width: 75%;
+}
+
+/* Styling for side nav */
+
+header {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav_image_container {
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.nav_image {
+  position: relative;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  height: auto;
+  width: 100%;
+  box-shadow: -20px -20px 0 0 #4B7BD6;
+  margin: 20px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+/* Styling for text on top of side nav photo */
+
+.nav_image_overlay {
+  font-size: 2.8rem;
+  color: white;
+  font-weight: 700;
+  position: absolute;
+  top: 10%;
+  left: 15%;
+}
+
+
+/* Styling for sidenvav social media links */
+
+.social-media-list a{
+  font-weight: 400;
+  color: #4f4f4f;
+}
+
+/* Styling for collapsible "Categories" list */
+
+.collapsible {
+ cursor: pointer;
+ font-size: 24px;
+ font-weight: 700;
+ border: none;
+ text-align: left;
+ outline: none;
+ color: $black;
+ font-family: 'DM Mono', monospace;
+ margin-top: 0;
+}
+
+/* removes background from default button styling for "Categories" button */
+button {
+  background-color: white;
+  padding: 0;
+}
+
+.content {
+ padding: 0 18px;
+ display: none;
+ overflow: hidden;
+}
+
+.collapsible:after {
+  content: '\002B'; /* Unicode character for "plus" sign (+) */
+  font-size: 24px;
+  font-family: 'DM Mono', monospace;
+  color: $black;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\002D"; /* Unicode character for "minus" sign (-) */
+}
+
+/* Styling for post listings */
+
+.listing_title {
+  color: $black;
+  font-family: 'DM Mono', monospace;
+  margin-top: 0;
+  font-weight: 800;
+}
+
+.listing_date {
+  font-family: 'DM Mono', monospace;
+  color: #4f4f4f;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+.post_section {
+  display: block;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+/* Styling for category tags */
+
+.tag_row {
+  display: flex;
+  flex-direction: row;
+}
+
+.pill_tag {
+  pointer-events: none;
+  background-color: #4B7BD6;
+  border: none;
+  color: #ffffff;
+  padding: 10px 10px;
+  font-family: 'DM Mono', monospace;
+  text-align: center;
+  text-decoration: none;
+  display: inline;
+  margin-right: 13px;
+  margin-left: -1px;
+  border-radius: 100px;
+}
+
+.pill_tag a{
+  color: #ffffff;
+}
+
+/* Styling for post pages */
+
+.post_date {
+  color: #4B7BD6;
+  font-family: 'DM Mono', monospace;
+  font-size: 18pt;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+
+/* behavior for smaller screens */
+
+@media screen and (max-width: 1000px) {
+  .flex_wrapper {
+    flex-direction: column;
+  }
+  .sidenav {
+    width: 90vw;
+    position: relative;
+    border-right: none;
+    border-bottom: 3px solid #000000;
+  }
+  .content_body {
+    width: 90vw;
+    margin-left: 0;
+    padding: 24px;
+  }
+
+  .nav_image {
+    width: 50%;
+    box-shadow: -20px -20px 0 0 #4B7BD6;
+    margin: 20px;
+    vertical-align: middle;
+    text-align: left;
+  }
+
+  .nav_image_overlay {
+    font-size: 1.5rem;
+    color: white;
+    font-weight: 700;
+    position: absolute;
+    top: 10%;
+    left: 6%;
+  }
+
+  .nav_image_container {
+    position: relative;
+    margin-bottom: 24px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .nav_image {
+    width: 80%;
+    box-shadow: -20px -20px 0 0 #4B7BD6;
+    margin: 20px;
+    vertical-align: middle;
+    text-align: left;
+  }
+
+  .nav_image_overlay {
+    font-size: 0.3rem;
+    color: white;
+    font-weight: 700;
+    position: absolute;
+    top: 10%;
+    left: 12%;
+  }
+}
+
+
+/* Styling for pagination links */
+
+.pagination {
+  font-family: 'DM Mono', monospace;
+  margin-top: 64px;
+  font-weight: 400;
+  font-size: 14pt;
+}

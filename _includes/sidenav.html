@@ -1,0 +1,59 @@
+<!--- CHANGE SIDE NAV PHOTO AND OVERLAY TEXT HERE -->
+<div class="nav_image_container">
+  <a href="/"><img class="nav_image" src="/assets/daphne.png"></a>
+  <a class="nav_image_overlay" href="/" style="font-family: Zilla Slab; font-weight: 400; font-size: 72px; line-height: 72px">Baby <br>Steps</a>
+</div>
+
+<h3>This blog is where I post up various half-baked ideas that I have.</h3>
+
+<!---COLLAPSIBLE SIDE NAV LINKS -->
+
+<nav>
+  <button type="button" class="collapsible">Categories</button>
+  <div class="content">
+  <ul style="list-style-type:none;">
+  {% for categories in site.categories %}
+    <li><a style="font-family: DM Mono, monospace" href="/categories/{{categories[0]}}">{{ categories[0] }}</a></li>
+  {% endfor %}
+  </ul>
+</div>
+<h4><a href="/about" class="listing_title">About</a><h4>
+<br>
+
+<!---SOCIAL PROFILE LINKS -->
+
+<div class="footer-col footer-col-2">
+        <ul class="social-media-list" style="list-style-type:none; padding-left:0;">
+          {% if site.github_username %}
+          <li>
+            {% include icon-github.html username=site.github_username %}
+          </li>
+          {% endif %}
+
+          {% if site.twitter_username %}
+          <li>
+            {% include icon-twitter.html username=site.twitter_username %}
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+</nav>
+
+<!---COLLAPSIBLE CATEGORY MENU SCRIPT -->
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>

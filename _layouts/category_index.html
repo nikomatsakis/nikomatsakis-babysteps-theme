@@ -1,0 +1,28 @@
+---
+layout: default
+---
+<section class="small-intro">
+  <div class="container">
+    <h2>
+      {{ page.title }}
+    </h2>
+  </div>
+</section>
+<section class="blog">
+  <div class="container">
+{% for post in site.posts %} {% if post.categories contains page.category %}
+
+    <div class="post_section">
+    <p class="listing_date">{{ post.date | date_to_long_string }}</p>
+    <a href="{{ post.url }}"><h3 class="listing_title">{{ post.title }}</h3></a>
+    <p>{{post.excerpt}}</p>
+    <div class="tag_row">
+    {% for category in post.categories %}
+      <a href="/categories/{{ category }}"><span class="pill_tag">{{ category }}</span></a>
+      {% endfor %}
+      </div>
+      <br>
+      <hr>
+    </div>
+    {% endif %} {% endfor %}
+  </div>
