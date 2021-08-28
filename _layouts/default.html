@@ -3,21 +3,23 @@
 
 <!doctype html>
 <html>
+
 <head>
   <title>Baby Steps</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="/assets/css/app.css">
-  </head>
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/app.css">
+</head>
 
-  <body>
-    <div class="flex_wrapper">
+<body>
+  <div class="flex_wrapper">
     <div class="sidenav">
-  {% include sidenav.html %}
-</div>
-  <section class="content_body">
+      {% include sidenav.html %}
+    </div>
+    <section class="content_body">
       {{ content }}
     </section>
 
   </div>
-  </body>
+</body>
+
 </html>
