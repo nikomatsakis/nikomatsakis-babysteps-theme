@@ -10,14 +10,16 @@ title: Baby Steps
 <!-- This loops through the paginated posts -->
 {% for post in paginator.posts %}
 <div class="post_section">
-<p class="listing_date">{{ post.date | date_to_long_string }}</p>
-<a href="{{ post.url }}"><h3 class="listing_title">{{ post.title }}</h3></a>
-<p>{{post.excerpt}}</p>
-<br>
-<div class="tag_row">
-{% for category in post.categories %}
-  <a href="/categories/{{ category }}"><span class="pill_tag">{{ category }}</span></a>
-  {% endfor %}
+  <p class="listing_date">{{ post.date | date_to_long_string }}</p>
+  <a href="{{ post.url }}">
+    <h3 class="listing_title">{{ post.title }}</h3>
+  </a>
+  <p>{{post.excerpt}}</p>
+  <br>
+  <div class="tag_row">
+    {% for category in post.categories %}
+    <a href="{{site.baseurl}}/categories/{{ category }}"><span class="pill_tag">{{ category }}</span></a>
+    {% endfor %}
   </div>
   <br>
   <hr>
@@ -27,18 +29,18 @@ title: Baby Steps
 <!-- Pagination links -->
 <div class="pagination">
   {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path }}" class="previous">
-      ← Previous
-    </a>
+  <a href="{{ paginator.previous_page_path }}" class="previous">
+    ← Previous
+  </a>
   {% else %}
-    <span class="previous"><b>← Previous</b></span>
+  <span class="previous"><b>← Previous</b></span>
   {% endif %}
   <span class="page_number ">
-        &nbsp; Page: {{ paginator.page }} of {{ paginator.total_pages }} &nbsp;
+    &nbsp; Page: {{ paginator.page }} of {{ paginator.total_pages }} &nbsp;
   </span>
   {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path }}" class="next">Next →</a>
+  <a href="{{ paginator.next_page_path }}" class="next">Next →</a>
   {% else %}
-    <span class="next "><b>Next →</b></span>
+  <span class="next "><b>Next →</b></span>
   {% endif %}
 </div>

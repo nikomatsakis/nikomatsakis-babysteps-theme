@@ -1,7 +1,7 @@
 <!--- CHANGE SIDE NAV PHOTO AND OVERLAY TEXT HERE -->
 <div class="nav_image_container">
   <a href="{{ site.baseurl }}"><img class="nav_image" src="{{ site.baseurl }}/assets/daphne.png"></a>
-  <a class="nav_image_overlay" href="/"
+  <a class="nav_image_overlay" href="{{ site.baseurl }}"
     style="font-family: Zilla Slab; font-weight: 400; font-size: 72px; line-height: 72px">Baby <br>Steps</a>
 </div>
 
@@ -14,11 +14,12 @@
   <div class="content">
     <ul style="list-style-type:none;">
       {% for categories in site.categories %}
-      <li><a style="font-family: DM Mono, monospace" href="/categories/{{categories[0]}}">{{ categories[0] }}</a></li>
+      <li><a style="font-family: DM Mono, monospace" href="{{site.baseurl}}/categories/{{categories[0]}}">{{
+          categories[0] }}</a></li>
       {% endfor %}
     </ul>
   </div>
-  <h4><a href="/about" class="listing_title">About</a>
+  <h4><a href="{{site.baseurl}}/about" class="listing_title">About</a>
     <h4>
       <br>
 
